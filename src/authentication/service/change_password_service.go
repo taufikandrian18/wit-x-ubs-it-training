@@ -113,24 +113,8 @@ func (s *AuthenticationService) ForgotPasswordRequest(ctx context.Context, usern
 	}
 
 	resetLink := fmt.Sprint("http://staging-ubs-project-management.wit.id/auth-pages/forgot-password/", token)
-	// from := mail.NewEmail("Cahyo Febrianto", "cahyo@wit.id")
 	subject := "UBS Forgot Password"
-	// to := mail.NewEmail(u.EmployeeFullname.String, u.Username)
 	plainTextContent := fmt.Sprintf("Hello,\n\nYou have requested to reset your password. Please click on the link below to reset your password:\n\n%s\n\nIf you didn't initiate this request, you can safely ignore this email.\n\nThanks,\nThe UBS Team", resetLink)
-	// htmlContent := fmt.Sprintf("Hello,\n\nYou have requested to reset your password. Please click on the link below to reset your password:\n\n%s\n\nIf you didn't initiate this request, you can safely ignore this email.\n\nThanks,\nThe Artotel Team", resetLink)
-	// message := mail.NewSingleEmail(from, subject, to, plainTextContent, htmlContent)
-	// client := sendgrid.NewSendClient("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")
-	// _, err = client.Send(message)
-	// if err != nil {
-	// 	log.FromCtx(ctx).Error(err, "user failed to send mail")
-	// 	err = errors.WithStack(httpservice.ErrUnknownSource)
-	// 	return
-	// }
-
-	// err = smtp.SendMail(ctx, []string{apiResponseAuthentication.AuthUsername}, subject, plainTextContent)
-	// if err != nil {
-	// 	return
-	// }
 
 	responseSubject = subject
 	responseBody = plainTextContent
