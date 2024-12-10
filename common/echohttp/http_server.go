@@ -9,6 +9,15 @@ import (
 	"gitlab.com/wit-id/test/toolkit/config"
 	"gitlab.com/wit-id/test/toolkit/echokit"
 
+	tokenApp "gitlab.com/wit-id/test/src/auth_token/application"
+	authApp "gitlab.com/wit-id/test/src/authentication/application"
+	employeeApp "gitlab.com/wit-id/test/src/employee/application"
+	IamAccessApp "gitlab.com/wit-id/test/src/iamaccess/application"
+	IamHasAccessApp "gitlab.com/wit-id/test/src/iamhasaccess/application"
+	masterdataApp "gitlab.com/wit-id/test/src/masterdata/application"
+	roleApp "gitlab.com/wit-id/test/src/role/application"
+	sidebarApp "gitlab.com/wit-id/test/src/sidebarmenu/application"
+
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
@@ -31,6 +40,14 @@ func RunEchoHTTPService(ctx context.Context, s *httpservice.Service, cfg config.
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "ok")
 	})
+	employeeApp.AddRouteEmployee(s, cfg, e)
+	sidebarApp.AddRouteSidebarMenu(s, cfg, e)
+	masterdataApp.AddRouteMasterdata(s, cfg, e)
+	IamAccessApp.AddRouteIamAccess(s, cfg, e)
+	IamHasAccessApp.AddRouteIamHasAccess(s, cfg, e)
+	tokenApp.AddRouteAuthToken(s, cfg, e)
+	authApp.AddRouteAuthentication(s, cfg, e)
+	roleApp.AddRouteRole(s, cfg, e)
 	// set route config
 	httpservice.SetRouteConfig(ctx, s, cfg, e)
 

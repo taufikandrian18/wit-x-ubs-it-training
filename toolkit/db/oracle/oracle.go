@@ -18,7 +18,7 @@ import (
 // the caller have the responsibility to close the *sqlx.DB when succeed.
 func NewOracleDatabase(opt *db.Option) (*sql.DB, string, error) {
 	connURL := &url.URL{
-		Scheme: "PROJECT_MANAGEMENT",
+		Scheme: "UBS_TRAINING",
 		User:   url.UserPassword(opt.Username, opt.Password),
 		Host:   fmt.Sprintf("%s:%d", opt.Host, opt.Port),
 		Path:   opt.DatabaseName,
