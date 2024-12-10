@@ -213,8 +213,6 @@ github.com/godror/godror/slog
 ## explicit; go 1.22.4
 github.com/godror/knownpb/internal
 github.com/godror/knownpb/timestamppb
-# github.com/golang-migrate/migrate/v4 v4.18.1
-## explicit; go 1.22.0
 # github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da
 ## explicit
 github.com/golang/groupcache/lru
@@ -261,10 +259,6 @@ github.com/googleapis/gax-go/v2/internal
 github.com/googleapis/gax-go/v2/internallog
 github.com/googleapis/gax-go/v2/internallog/internal
 github.com/googleapis/gax-go/v2/iterator
-# github.com/hashicorp/errwrap v1.1.0
-## explicit
-# github.com/hashicorp/go-multierror v1.1.1
-## explicit; go 1.13
 # github.com/hashicorp/hcl v1.0.0
 ## explicit
 github.com/hashicorp/hcl
