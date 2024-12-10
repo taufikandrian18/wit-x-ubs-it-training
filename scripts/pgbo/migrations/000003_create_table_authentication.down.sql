@@ -1,0 +1,5 @@
+DROP TRIGGER UBS_TRAINING.authentication_trigger;
+---
+DROP SEQUENCE UBS_TRAINING.authentication_seq;
+---
+DROP TABLE UBS_TRAINING.AUTHENTICATION;
