@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.46.0]
+### Changed
+- dsn.StandaloneConnection, dsn.Heterogeneous and dsn.ExternalAuth became sql.NullBool to be able to differentiate set and not set.
+- Use ODPI-v5.4.1, fixing SIGSEGV on standalone connection with external auth.
+
 ## [v0.45.2]
 ### Added
 - NoRetry option to disable re-execution of a statement on ORA-04061, ORA-04065 or ORA-04068
