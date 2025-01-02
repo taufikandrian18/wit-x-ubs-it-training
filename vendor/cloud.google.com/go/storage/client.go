@@ -122,7 +122,7 @@ type settings struct {
 	gax []gax.CallOption
 
 	// idempotent indicates if the call is idempotent or not when considering
-	// if the call should be retried or not.
+	// if the call should be retired or not.
 	idempotent bool
 
 	// clientOption is a set of option.ClientOption to be used during client
@@ -132,8 +132,6 @@ type settings struct {
 
 	// userProject is the user project that should be billed for the request.
 	userProject string
-
-	metricsContext *metricsContext
 }
 
 func initSettings(opts ...storageOption) *settings {
@@ -237,8 +235,7 @@ type openWriterParams struct {
 	chunkSize int
 	// chunkRetryDeadline - see `Writer.ChunkRetryDeadline`.
 	// Optional.
-	chunkRetryDeadline   time.Duration
-	chunkTransferTimeout time.Duration
+	chunkRetryDeadline time.Duration
 
 	// Object/request properties
 

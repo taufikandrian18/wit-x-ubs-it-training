@@ -168,7 +168,6 @@ func forgotPasswordSubmit(svc *service.AuthenticationService) echo.HandlerFunc {
 
 func getProfile(svc *service.AuthenticationService) echo.HandlerFunc {
 	return func(ctx echo.Context) error {
-
 		userInfo := ctx.Get(constants.MddwUserBackoffice).(payload.ResponseAuthenticationData)
 
 		profile, err := svc.GetProfileFromToken(ctx.Request().Context(), userInfo.EmployeeID)
